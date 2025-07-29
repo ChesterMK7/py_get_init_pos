@@ -28,16 +28,16 @@ cd gpsWS/src
 Clone the respository in the src folder
 
 ``` bash
-git clone https://github.com/ChesterMK7/py_get_init_pos
+git clone https://github.com/ChesterMK7/py_get_init_pos -b orientation_experimental
 ```
 
 Make sure to configure the files you want to use
 
 ``` bash
-nano py_get_init_pos/py_get_init_pos/subscriber_member_function.py
+nano py_get_init_pos/py_get_init_pos/<python_file>
 ```
 
-Specifically modify these lines in subscriber_member_function.py
+Specifically modify these lines in gps_convert.py/orientation_experimental.py
 
 ``` python
 # Filenames for param input and output
@@ -62,8 +62,13 @@ source install/setup.bash
 
 ## Usage
 
-Run the parser/publisher node
+Run the initial position node
 
 ``` bash
 ros2 run py_get_init_pos gps_convert
 ```
+
+Run the calculate orientation node (untested)
+
+``` bash
+ros2 run py_get_init_pos orientation_calc

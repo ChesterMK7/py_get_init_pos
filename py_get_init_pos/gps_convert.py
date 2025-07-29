@@ -251,10 +251,10 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from sensor_msgs.msg import NavSatFix
 
-class MinimalSubscriber(Node):
+class gps_convert(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
+        super().__init__('gps_conv')
         self.subscription = self.create_subscription(
             NavSatFix,
             'nav_sat_fix',
@@ -289,14 +289,14 @@ class MinimalSubscriber(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    minimal_subscriber = MinimalSubscriber()
+    gps_conv = gps_convert()
 
-    rclpy.spin(minimal_subscriber)
+    rclpy.spin(gps_conv)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    minimal_subscriber.destroy_node()
+    gps_conv.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
